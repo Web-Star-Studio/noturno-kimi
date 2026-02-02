@@ -1,0 +1,26 @@
+{
+  "name": "@noturno/convex",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "convex dev",
+    "build": "tsc --noEmit",
+    "deploy": "convex deploy",
+    "clean": "rm -rf node_modules convex/_generated",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "convex": "^1.18.2",
+    "@noturno/shared": "workspace:*",
+    "@better-auth/convex": "^1.0.0",
+    "better-auth": "^1.4.17",
+    "zod": "^3.25.7"
+  },
+  "devDependencies": {
+    "@noturno/eslint-config": "workspace:*",
+    "@noturno/typescript-config": "workspace:*",
+    "typescript": "^5.7.3"
+  }
+}
