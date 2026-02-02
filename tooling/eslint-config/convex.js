@@ -12,7 +12,7 @@ export const convexConfig = {
     // Preferir sintaxe de objeto para funções registradas
     "@convex-dev/no-old-registered-function-syntax": "error",
     // Requerer validadores de argumentos
-    "@convex-dev/require-argument-validators": "error",
+    "@convex-dev/require-args-validator": "error",
     // Requerer nomes de tabela explícitos em operações de banco de dados
     "@convex-dev/explicit-table-ids": "error",
     // Prevenir importações de arquivos Node em arquivos Convex (experimental)

@@ -79,7 +79,7 @@ export const config = tseslint.config(
     },
     rules: {
       "@convex-dev/no-old-registered-function-syntax": "error",
-      "@convex-dev/require-argument-validators": "error",
+      "@convex-dev/require-args-validator": "error",
       "@convex-dev/explicit-table-ids": "error",
       "@convex-dev/import-wrong-runtime": "warn",
     },

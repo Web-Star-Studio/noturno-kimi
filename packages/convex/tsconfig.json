@@ -1,0 +1,5 @@
+{
+  "extends": "@noturno/typescript-config/convex",
+  "include": ["convex/**/*"],
+  "exclude": ["convex/_generated"]
+}
