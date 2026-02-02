@@ -48,6 +48,7 @@ jobs:
             shared
             auth
             deps
+            tooling
           requireScope: false
 
       - name: Check changeset
