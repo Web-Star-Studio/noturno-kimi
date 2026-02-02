@@ -3,6 +3,7 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import";
 import turboPlugin from "eslint-plugin-turbo";
 import tseslint from "typescript-eslint";
+import convexPlugin from "@convex-dev/eslint-plugin";
 
 /**
  * @type {import("eslint").Linter.Config}
@@ -68,6 +69,19 @@ export const config = tseslint.config(
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-call": "off",
       "@typescript-eslint/no-unsafe-member-access": "off",
+    },
+  },
+  // Convex specific rules
+  {
+    files: ["**/convex/**/*.ts"],
+    plugins: {
+      "@convex-dev": convexPlugin,
+    },
+    rules: {
+      "@convex-dev/no-old-registered-function-syntax": "error",
+      "@convex-dev/require-argument-validators": "error",
+      "@convex-dev/explicit-table-ids": "error",
+      "@convex-dev/import-wrong-runtime": "warn",
     },
   }
 );
