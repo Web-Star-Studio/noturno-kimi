@@ -49,6 +49,7 @@ jobs:
             auth
             deps
             tooling
+            docs
           requireScope: false
 
       - name: Check changeset

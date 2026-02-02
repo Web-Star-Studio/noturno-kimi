@@ -21,7 +21,7 @@ module.exports = {
     "scope-enum": [
       2,
       "always",
-      ["web", "mobile", "convex", "shared", "auth", "deps", "tooling"],
+      ["web", "mobile", "convex", "shared", "auth", "deps", "tooling", "docs"],
     ],
   },
 };
