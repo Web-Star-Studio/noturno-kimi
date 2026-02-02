@@ -1,9 +1,8 @@
-import type { AuthConfig } from "better-auth";
 import type { Context } from "../_generated/api";
 
 /**
  * Better Auth configuration for Convex
- * 
+ *
  * This configuration uses the Convex adapter to store auth data
  * directly in Convex tables.
  */
@@ -41,4 +40,4 @@ export const betterAuthConfig = {
     expiresIn: 60 * 60 * 24 * 7, // 7 days
     updateAge: 60 * 60 * 24, // 1 day
   },
-} satisfies AuthConfig;
+};

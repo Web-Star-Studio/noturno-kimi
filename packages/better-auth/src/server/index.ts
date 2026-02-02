@@ -1,5 +1,5 @@
 import { betterAuth } from "better-auth";
-import { convexAdapter } from "@better-auth/convex";
+import { convex } from "@convex-dev/better-auth/plugins";
 
 export const auth = betterAuth({
   database: convexAdapter(),
