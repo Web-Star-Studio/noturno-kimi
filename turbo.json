@@ -1,0 +1,55 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env"],
+  "globalEnv": [
+    "NODE_ENV",
+    "CI",
+    "BETTER_AUTH_SECRET",
+    "BETTER_AUTH_URL",
+    "CONVEX_DEPLOYMENT",
+    "CONVEX_URL",
+    "OPENAI_API_KEY",
+    "SERPAPI_KEY",
+    "RESEND_API_KEY"
+  ],
+  "tasks": {
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
+        "dist/**",
+        "expo-router/**",
+        ".expo/**",
+        "ios/**",
+        "android/**"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": ["^topo"]
+    },
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    },
+    "format": {},
+    "postinstall": {
+      "dependsOn": ["^postinstall"]
+    }
+  }
+}

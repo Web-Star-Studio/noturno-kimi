@@ -1,0 +1,53 @@
+# Dependencies
+node_modules
+.pnpm-store
+bun.lockb
+
+# Build outputs
+.next
+dist
+build
+out
+.expo
+expo-router
+ios
+android
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs
+
+# Testing
+coverage
+.nyc_output
+
+# Turbo
+.turbo
+
+# Cache
+.cache
+*.cache
+
+# Convex
+convex/_generated
+
+# Misc
+*.pem
+.vercel

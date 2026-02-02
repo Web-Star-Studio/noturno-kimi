@@ -1,0 +1,17 @@
+{
+  "name": "@noturno/prettier-config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "prettier-plugin-tailwindcss": "^0.6.11"
+  },
+  "peerDependencies": {
+    "prettier": "^3.4.2"
+  }
+}
