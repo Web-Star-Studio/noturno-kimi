@@ -56,9 +56,9 @@ Visão geral da arquitetura do Noturno.
 
 ### 1. Frontend
 
-#### Web App (Next.js 15)
+#### Web App (Next.js 16)
 
-- **Framework**: Next.js 15 com App Router
+- **Framework**: Next.js 16 com App Router
 - **Estilização**: Tailwind CSS
 - **Componentes**: shadcn/ui
 - **Autenticação**: Better Auth (cookies)
