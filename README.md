@@ -17,7 +17,7 @@ Noturno é um SaaS que automatiza a prospecção outbound usando IA. O sistema b
 ```
 noturno/
 ├── apps/
-│   ├── web/           # Next.js 14 (App Router)
+│   ├── web/           # Next.js 15 (App Router)
 │   └── mobile/        # Expo SDK 54 + Native Wind
 ├── packages/
 │   ├── convex/        # Backend Convex (BD + funções)
@@ -34,7 +34,7 @@ noturno/
 | Componente | Tecnologia |
 |------------|------------|
 | **Monorepo** | Turborepo + Bun |
-| **Web** | Next.js 14 (App Router) + Tailwind CSS |
+| **Web** | Next.js 15 (App Router) + Tailwind CSS |
 | **Mobile** | Expo SDK 54 + Native Wind |
 | **Backend** | Convex (BD + funções serverless) |
 | **Autenticação** | Better Auth |
