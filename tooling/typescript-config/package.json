@@ -1,0 +1,12 @@
+{
+  "name": "@noturno/typescript-config",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "files": [
+    "*.json"
+  ],
+  "scripts": {
+    "clean": "rm -rf node_modules"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "noturno",
+  "private": true,
+  "description": "Noturno - Automação de prospecção outbound com IA",
+  "version": "0.0.1",
+  "packageManager": "bun@1.2.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tooling/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo run clean",
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=web",
+    "dev:mobile": "turbo run dev --filter=mobile",
+    "format": "turbo run format --continue -- --cache --cache-location node_modules/.cache/.prettiercache",
+    "format:fix": "turbo run format --continue -- --write --cache --cache-location node_modules/.cache/.prettiercache",
+    "lint": "turbo run lint --continue -- --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location node_modules/.cache/.eslintcache",
+    "lint:ws": "bunx sherif@latest",
+    "postinstall": "bunx turbo run postinstall",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "typecheck": "turbo run typecheck",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.11",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@noturno/prettier-config": "workspace:*",
+    "@turbo/gen": "^2.3.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
+    "sherif": "^1.1.1",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.3"
+  },
+  "prettier": "@noturno/prettier-config",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
