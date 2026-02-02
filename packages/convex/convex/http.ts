@@ -1,6 +1,6 @@
-import { httpRouter } from "../_generated/server";
+import { httpRouter, action, internalMutation } from "../_generated/server";
 import { internal } from "../_generated/api";
-import { action } from "../_generated/server";
+import { v } from "convex/values";
 
 /**
  * HTTP actions for Better Auth webhooks
@@ -19,13 +19,26 @@ http.route({
     args: { request: v.any() },
     returns: v.any(),
     handler: async (ctx, { request }) => {
+      // Verify webhook signature for security
+      const signature = request.headers.get("x-better-auth-signature");
+      const secret = process.env.BETTER_AUTH_WEBHOOK_SECRET;
+      
+      if (!signature || !secret) {
+        return new Response("Unauthorized", { status: 401 });
+      }
+      
+      // Simple signature verification (in production, use proper HMAC)
+      if (signature !== secret) {
+        return new Response("Invalid signature", { status: 401 });
+      }
+      
       const body = await request.json();
       
       switch (body.event) {
         case "user.created":
         case "user.updated": {
           const { user } = body;
-          await ctx.runMutation(internal.auth.syncUser, {
+          await ctx.runMutation(internal.http.syncUser, {
             betterAuthId: user.id,
             email: user.email,
             name: user.name || user.email.split("@")[0],
@@ -34,7 +47,7 @@ http.route({
         }
         case "user.deleted": {
           const { user } = body;
-          await ctx.runMutation(internal.auth.deleteUser, {
+          await ctx.runMutation(internal.http.deleteUser, {
             betterAuthId: user.id,
           });
           break;
@@ -65,9 +78,6 @@ http.route({
 });
 
 export default http;
-
-import { v } from "convex/values";
-import { internalMutation } from "../_generated/server";
 
 /**
  * Sync user from Better Auth to our users table
